@@ -1,7 +1,7 @@
 public class Address {
     String line1;
     String line2;
-    String line3;
+    String city;
     int pinCode;
 
     String display() {
@@ -9,7 +9,7 @@ public class Address {
 
         res += line1 + ",\n";
         res += line2 + ",\n";
-        res += line3 + " ";
+        res += city + " ";
 
         res += pinCode;
 
@@ -18,10 +18,10 @@ public class Address {
 
     Address() {}
 
-    Address(String line1, String line2, String line3, int pinCode) {
+    Address(String line1, String line2, String city, int pinCode) {
         this.line1 = line1;
         this.line2 = line2;
-        this.line3 = line3;
+        this.city = city;
         this.pinCode = pinCode;
     }
 }

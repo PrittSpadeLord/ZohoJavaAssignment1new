@@ -75,7 +75,6 @@ public class BankingApplication {
         System.out.println(" \\ \\      / /__| | ___ ___  _ __ ___   ___ ");
         System.out.println("  \\ \\ /\\ / / _ \\ |/ __/ _ \\| '_ ` _ \\ / _ \\");
         System.out.println("   \\ V  V /  __/ | (_| (_) | | | | | |  __/");
-        System.out.println("   \\ V  V /  __/ | (_| (_) | | | | | |  __/");
         System.out.println("    \\_/\\_/ \\___|_|\\___\\___/|_| |_| |_|\\___|");
 
         System.out.println("\nWelcome to Console banking application");
@@ -83,7 +82,7 @@ public class BankingApplication {
 
         while(!stop) {
             System.out.print("> ");
-            String command = scan.nextLine();
+            String command = scan.nextLine().trim();
             System.out.print("\n");
 
             //Command handling goes here...
@@ -145,7 +144,15 @@ public class BankingApplication {
                     System.out.println("You are not authorized to perform this action. Do \"super [password]\" to gain access.");
                 }
             }
-            else if(command.startsWith("customerdetails ")) {
+            else if(command.equals("bankdetails")) {
+
+                System.out.println("Bank Details:");
+                System.out.println("-------------\n");
+
+                System.out.println("Bank name: " + icici.name);
+                System.out.println("Bank name: " + icici.name);
+            }
+            else if(command.equals("bankdetails")) {
                 //do it
             }
 
@@ -155,8 +162,9 @@ public class BankingApplication {
 
                 //List of commands
                 System.out.println("help                            - Shows this message.");
-                System.out.println("super [password]                - Gives you admin powers if the password is correct");
+                System.out.println("super [password]                - Gives you admin powers if the password is correct.");
                 System.out.println("customerdetails [customer_name] - Shows details about the customer. Can only be done with admin powers.");
+                System.out.println("bankdetails                     - Shows basic details about the bank. Can only be done with admin powers.");
                 System.out.println("end                             - Terminates the console application.");
             }
             else {
